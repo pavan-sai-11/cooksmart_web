@@ -1,0 +1,398 @@
+/* CookSmart - Home Page Styles */
+
+/* --------------------------------
+   HERO SECTION
+-------------------------------- */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 80px 40px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.hero > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 16px;
+    opacity: 0.95;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+    font-weight: 400;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 8px 8px 8px 24px;
+    max-width: 580px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+    /* remove strong green glow on focus; use subtle neutral shadow */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.search-bar input {
+    flex: 1;
+    font-size: 14px;
+    color: var(--text);
+    background: transparent;
+    padding: 8px 0;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+/* Override global focus styles for search inputs to remove green border/glow */
+.search-bar input:focus,
+.search-bar:focus-within input {
+    border-color: var(--border) !important;
+    box-shadow: none !important;
+}
+
+.search-bar button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.search-bar input::placeholder { 
+    color: var(--text-sub);
+    font-weight: 400;
+}
+
+.search-bar button {
+    background: var(--primary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar button:hover { 
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 204, 102, 0.3);
+}
+
+
+/* --------------------------------
+   SECTION TITLE
+-------------------------------- */
+.section { 
+    max-width: 1000px; 
+    margin: 48px auto; 
+    padding: 0 20px; 
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    padding-left: 16px;
+    border-left: 4px solid var(--primary);
+    color: var(--text);
+    letter-spacing: -0.5px;
+}
+
+
+/* --------------------------------
+   CUISINE GRID
+-------------------------------- */
+.cuisine-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.cuisine-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cuisine-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 204, 102, 0.08) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cuisine-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 204, 102, 0.15);
+}
+
+.cuisine-card:hover::before {
+    opacity: 1;
+}
+
+.cuisine-card .emoji {
+    font-size: 44px;
+    display: block;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.cuisine-card:hover .emoji {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.cuisine-card .name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.3px;
+}
+
+
+/* --------------------------------
+   MOOD GRID
+-------------------------------- */
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.mood-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.mood-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 204, 102, 0.08) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mood-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 204, 102, 0.15);
+}
+
+.mood-card:hover::before {
+    opacity: 1;
+}
+
+.mood-card .emoji  { 
+    font-size: 36px; 
+    display: block; 
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.mood-card:hover .emoji {
+    transform: scale(1.15);
+}
+
+.mood-card .label  { 
+    font-size: 14px; 
+    font-weight: 700; 
+    display: block; 
+    color: var(--text);
+    letter-spacing: -0.3px;
+}
+
+.mood-card .desc   { 
+    font-size: 12px; 
+    color: var(--text-sub); 
+    margin-top: 6px; 
+    display: block;
+    font-weight: 400;
+}
+
+
+/* --------------------------------
+   STATS BAR
+-------------------------------- */
+.stats-bar {
+    display: flex;
+    background: var(--bg-card);
+    border-top: 1.5px solid var(--border);
+    border-bottom: 1.5px solid var(--border);
+    margin-top: 48px;
+    border-radius: 12px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+    padding: 28px 16px;
+    border-right: 1.5px solid var(--border);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.stat-item:hover {
+    background: rgba(0, 204, 102, 0.05);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-item .icon  { 
+    font-size: 24px; 
+    display: block; 
+    margin-bottom: 8px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover .icon {
+    transform: scale(1.1);
+}
+
+.stat-item .value { 
+    font-size: 22px; 
+    font-weight: 800; 
+    color: var(--primary); 
+    display: block;
+    letter-spacing: -0.5px;
+}
+
+.stat-item .label { 
+    font-size: 12px; 
+    color: var(--text-sub); 
+    margin-top: 4px; 
+    display: block;
+    font-weight: 500;
+}
+
+/* Images: keep aspect ratio and prevent horizontal stretching */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.cuisine-card img,
+.mood-card img,
+.hero img,
+.dish-card img,
+.recipe-thumb {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 220px;
+}
+
+/* Ensure card content stays centered and doesn't stretch horizontally */
+.cuisine-card,
+.mood-card {
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* --------------------------------
+   RESPONSIVE
+-------------------------------- */
+@media (max-width: 768px) {
+    .hero { padding: 60px 20px; }
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 14px; }
+    .search-bar { max-width: 100%; }
+    
+    .cuisine-grid,
+    .mood-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    
+    .section { margin: 36px auto; }
+    .section-title { font-size: 20px; margin-bottom: 20px; }
+    
+    .stats-bar { flex-wrap: wrap; }
+    .stat-item { 
+        min-width: 50%; 
+        border-bottom: 1.5px solid var(--border);
+        border-right: none;
+    }
+    .stat-item:nth-child(odd) { border-right: 1.5px solid var(--border); }
+}
+
+@media (max-width: 480px) {
+    .hero { padding: 50px 16px; }
+    .hero h1 { font-size: 24px; margin-bottom: 12px; }
+    
+    .cuisine-grid,
+    .mood-grid { grid-template-columns: 1fr; gap: 12px; }
+    
+    .search-bar { padding: 8px 6px 8px 16px; }
+    .search-bar button { padding: 10px 20px; }
+    
+    .stat-item { min-width: 100%; border-bottom: 1.5px solid var(--border); border-right: none; }
+}

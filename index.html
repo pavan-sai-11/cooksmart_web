@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookSmart</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+    <!-- ANIMATED BACKGROUND -->
+    <div class="background-animation">
+        <div class="animated-gradient"></div>
+        <div id="particles-container" class="particles-container"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-logo">🍳 CookSmart</div>
+        <div class="nav-links">
+            <a href="index.html">🏠 Home</a>
+            <a href="fridge.html">🧊 Fridge</a>
+            <a href="budget.html">💰 Budget</a>
+            <a href="profile.html">👤 Profile</a>
+            <a href="contact.html">📬 Contact</a>
+        </div>
+        <div class="nav-actions">
+            <button id="darkModeBtn" onclick="toggleDarkMode()">🌙</button>
+            <button class="btn-logout" onclick="logout()">🚪 Logout</button>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>What are you cooking today? 🍽️</h1>
+        <p>Find recipes, check ingredients and cook smart</p>
+
+        <!-- Search -->
+        <div class="search-bar">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search any dish... eg: Pasta, Dal, Biryani"
+                onkeypress="handleEnter(event)"
+            />
+            <button onclick="goToSearch()">Search</button>
+        </div>
+    </section>
+
+
+    <!-- CUISINE SECTION -->
+    <div class="section">
+        <h2 class="section-title">Browse by Cuisine</h2>
+        <div class="cuisine-grid">
+
+            <div class="cuisine-card" onclick="goToCuisine('Indian')">
+                <span class="emoji">🇮🇳</span>
+                <span class="name">Indian</span>
+            </div>
+
+            <div class="cuisine-card" onclick="goToCuisine('Chinese')">
+                <span class="emoji">🍜</span>
+                <span class="name">Chinese</span>
+            </div>
+
+            <div class="cuisine-card" onclick="goToCuisine('Italian')">
+                <span class="emoji">🍕</span>
+                <span class="name">Italian</span>
+            </div>
+
+            <div class="cuisine-card" onclick="goToCuisine('Mexican')">
+                <span class="emoji">🌮</span>
+                <span class="name">Mexican</span>
+            </div>
+
+            <div class="cuisine-card" onclick="goToCuisine('Thai')">
+                <span class="emoji">🍛</span>
+                <span class="name">Thai</span>
+            </div>
+
+            <div class="cuisine-card" onclick="goToCuisine('Mediterranean')">
+                <span class="emoji">🥗</span>
+                <span class="name">Mediterranean</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- MOOD SECTION -->
+    <div class="section">
+        <h2 class="section-title">How are you feeling?</h2>
+        <div class="mood-grid">
+
+            <div class="mood-card" onclick="goToMood('tired')">
+                <span class="emoji">😴</span>
+                <span class="label">Too Tired</span>
+                <span class="desc">Under 15 min recipes</span>
+            </div>
+
+            <div class="mood-card" onclick="goToMood('hungry')">
+                <span class="emoji">🍳</span>
+                <span class="label">Very Hungry</span>
+                <span class="desc">Filling meals</span>
+            </div>
+
+            <div class="mood-card" onclick="goToMood('healthy')">
+                <span class="emoji">🥗</span>
+                <span class="label">Eating Healthy</span>
+                <span class="desc">Low calorie options</span>
+            </div>
+
+            <div class="mood-card" onclick="goToMood('muscle')">
+                <span class="emoji">💪</span>
+                <span class="label">Muscle Gain</span>
+                <span class="desc">High protein recipes</span>
+            </div>
+
+            <div class="mood-card" onclick="goToMood('vegetarian')">
+                <span class="emoji">🌱</span>
+                <span class="label">Vegetarian</span>
+                <span class="desc">No meat recipes</span>
+            </div>
+
+            <div class="mood-card" onclick="goToMood('lazy')">
+                <span class="emoji">⚡</span>
+                <span class="label">Minimal Effort</span>
+                <span class="desc">3 to 5 ingredients only</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <span class="icon">🔥</span>
+            <span class="value" id="streakVal">0</span>
+            <span class="label">Day Streak</span>
+        </div>
+        <div class="stat-item">
+            <span class="icon">🍽️</span>
+            <span class="value" id="dishVal">0</span>
+            <span class="label">Dishes Cooked</span>
+        </div>
+        <div class="stat-item">
+            <span class="icon">💰</span>
+            <span class="value" id="budgetVal">₹0</span>
+            <span class="label">Budget Left</span>
+        </div>
+        <div class="stat-item">
+            <span class="icon">🧊</span>
+            <span class="value" id="fridgeVal">0%</span>
+            <span class="label">Fridge Health</span>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        🍳 CookSmart — Made for Students
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/config.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/home.js"></script>
+
+</body>
+</html>

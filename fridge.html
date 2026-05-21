@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fridge Tracker — CookSmart</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fridge.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-logo">🍳 CookSmart</div>
+        <div class="nav-links">
+            <a href="index.html">🏠 Home</a>
+            <a href="fridge.html">🧊 Fridge</a>
+            <a href="budget.html">💰 Budget</a>
+            <a href="profile.html">👤 Profile</a>
+            <a href="contact.html">📬 Contact</a>
+        </div>
+        <button id="darkModeBtn" onclick="toggleDarkMode()">🌙</button>
+    </nav>
+
+
+    <!-- PAGE -->
+    <div class="page">
+
+        <h1 class="page-title">🧊 My Fridge</h1>
+
+
+        <!-- FRIDGE HEALTH SCORE -->
+        <div class="health-card">
+            <p class="health-label">Fridge Health Score</p>
+            <div class="health-score" id="healthScore">100%</div>
+            <div class="progress-wrap">
+                <div class="progress-fill" id="healthBar"
+                    style="width: 100%">
+                </div>
+            </div>
+            <p class="health-msg" id="healthMsg">
+                All items are fresh!
+            </p>
+        </div>
+
+
+        <!-- ADD INGREDIENT FORM -->
+        <div class="card" style="margin-bottom: 24px;">
+            <h2 class="form-title">Add Ingredient</h2>
+            <div class="add-form">
+
+                <!-- Ingredient Name -->
+                <div class="form-group">
+                    <label>Ingredient Name</label>
+                    <input
+                        type="text"
+                        id="ingName"
+                        placeholder="eg: Tomato, Milk, Paneer"
+                    />
+                </div>
+
+                <!-- Quantity -->
+                <div class="form-group">
+                    <label>Quantity</label>
+                    <input
+                        type="text"
+                        id="ingQty"
+                        placeholder="eg: 500g, 2 pcs"
+                    />
+                </div>
+
+                <!-- Expiry Date -->
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input
+                        type="date"
+                        id="ingExpiry"
+                    />
+                </div>
+
+                <button class="btn btn-primary"
+                    onclick="addIngredient()">
+                    + Add
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- EXPIRING SOON ALERT -->
+        <div id="expiryAlert" style="display:none;">
+        </div>
+
+
+        <!-- FIND RECIPES WITH EXPIRING ITEMS -->
+        <div id="expiringRecipeSection" style="display:none;">
+            <button class="btn btn-primary"
+                style="margin-bottom: 24px; width: 100%;"
+                onclick="findRecipesWithExpiring()">
+                🍳 Find Recipes Using Expiring Items
+            </button>
+        </div>
+
+
+        <!-- FRIDGE ITEMS LIST -->
+        <h2 class="section-heading">My Ingredients</h2>
+
+        <div id="fridgeList">
+            <!-- Items load here -->
+            <div class="empty-state">
+                <div class="icon">🧊</div>
+                <h3>Your fridge is empty</h3>
+                <p>Add ingredients to start tracking</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        🍳 CookSmart — Made for Students
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/fridge.js"></script>
+
+</body>
+</html>

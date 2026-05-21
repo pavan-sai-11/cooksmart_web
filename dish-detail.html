@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dish Detail — CookSmart</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dish.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-logo">🍳 CookSmart</div>
+        <div class="nav-links">
+            <a href="index.html">🏠 Home</a>
+            <a href="fridge.html">🧊 Fridge</a>
+            <a href="budget.html">💰 Budget</a>
+            <a href="profile.html">👤 Profile</a>
+            <a href="contact.html">📬 Contact</a>
+        </div>
+        <button id="darkModeBtn" onclick="toggleDarkMode()">🌙</button>
+    </nav>
+
+
+    <!-- PAGE -->
+    <div class="page">
+
+        <!-- Back Button -->
+        <button class="btn btn-secondary"
+            onclick="history.back()"
+            style="margin-bottom: 20px;">
+            ← Back
+        </button>
+
+        <!-- All dish content loads here -->
+        <div id="dishContainer">
+            <div class="spinner-container">
+                <div class="spinner"></div>
+                <p>Loading dish details...</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        🍳 CookSmart — Made for Students
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dish-detail.js"></script>
+
+</body>
+</html>

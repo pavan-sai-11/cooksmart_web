@@ -1,0 +1,81 @@
+/* CookSmart - Results Page Styles */
+
+.results-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+/* Keep page content centered and constrained */
+.page {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.results-header .page-title {
+    margin-bottom: 0;
+}
+
+/* Results Grid */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+/* Recipe Card */
+.recipe-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+
+.recipe-card img {
+    width: 100%;
+    /* Use a consistent aspect ratio to avoid stretching and odd crops */
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
+/* Card Body */
+.recipe-card-body {
+    padding: 16px;
+}
+
+.recipe-card-body h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+/* Meta info row */
+.recipe-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.recipe-meta span {
+    font-size: 12px;
+    color: var(--text-sub);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .results-grid { grid-template-columns: 1fr; }
+}

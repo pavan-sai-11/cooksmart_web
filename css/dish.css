@@ -1,0 +1,253 @@
+/* CookSmart - Dish Detail Page Styles */
+
+/* Dish Image */
+.dish-img {
+    width: min(100%, 860px);
+    height: 240px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin: 0 auto 20px;
+    display: block;
+}
+
+/* Dish Title */
+.dish-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Meta Row */
+.dish-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.dish-meta span {
+    font-size: 13px;
+    color: var(--text-sub);
+}
+
+/* Save Button */
+.save-btn {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 28px;
+}
+
+.save-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.save-btn.saved {
+    background: var(--primary);
+    color: white;
+}
+
+/* Section Heading */
+.dish-section {
+    margin-bottom: 28px;
+}
+
+.dish-section h2 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-left: 10px;
+    border-left: 3px solid var(--primary);
+}
+
+
+/* --------------------------------
+   NUTRITION
+-------------------------------- */
+.nutrition-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nutrition-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nutrition-label {
+    font-size: 13px;
+    color: var(--text-sub);
+    width: 90px;
+    flex-shrink: 0;
+}
+
+.nutrition-value {
+    font-size: 13px;
+    font-weight: 600;
+    width: 55px;
+    flex-shrink: 0;
+}
+
+.progress-wrap { flex: 1; }
+
+
+/* --------------------------------
+   INGREDIENTS
+-------------------------------- */
+.ingredient-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ingredient-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.ingredient-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.ingredient-item label {
+    font-size: 14px;
+    color: var(--text);
+    cursor: pointer;
+    flex: 1;
+}
+
+/* Missing item styling */
+.ingredient-item.missing {
+    border-color: var(--danger);
+    background: rgba(214,48,49,0.05);
+}
+
+.ingredient-item.missing label {
+    color: var(--danger);
+}
+
+
+/* --------------------------------
+   READINESS BOX
+-------------------------------- */
+.readiness-box {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.readiness-percent {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.readiness-text {
+    font-size: 14px;
+    color: var(--text-sub);
+    margin-top: 4px;
+}
+
+
+/* --------------------------------
+   SUBSTITUTES
+-------------------------------- */
+.substitute-item {
+    background: rgba(0,184,148,0.08);
+    border: 1px solid var(--success);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+}
+
+.sub-missing {
+    font-size: 13px;
+    color: var(--danger);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.sub-suggestion {
+    font-size: 13px;
+    color: var(--success);
+}
+
+
+/* --------------------------------
+   ORDER PLATFORMS
+-------------------------------- */
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.platform-btn {
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.platform-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+
+/* --------------------------------
+   ACTION BUTTONS
+-------------------------------- */
+.action-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.action-row .btn {
+    flex: 1;
+    justify-content: center;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dish-title  { font-size: 20px; }
+    .dish-img    { height: 200px;   }
+    .action-row  { flex-direction: column; }
+    .platform-grid { grid-template-columns: 1fr; }
+}

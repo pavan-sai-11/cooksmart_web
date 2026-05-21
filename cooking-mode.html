@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Mode — CookSmart</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cooking.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-logo">🍳 CookSmart</div>
+        <div class="nav-links">
+            <a href="index.html">🏠 Home</a>
+            <a href="fridge.html">🧊 Fridge</a>
+            <a href="budget.html">💰 Budget</a>
+            <a href="profile.html">👤 Profile</a>
+            <a href="contact.html">📬 Contact</a>
+        </div>
+        <button id="darkModeBtn" onclick="toggleDarkMode()">🌙</button>
+    </nav>
+
+
+    <!-- PAGE -->
+    <div class="page">
+
+        <!-- Cooking View — shows during cooking -->
+        <div id="cookingView">
+
+            <!-- Progress -->
+            <div class="cooking-progress">
+                <div class="step-counter" id="stepCounter">
+                    Step 1 of 10
+                </div>
+                <div class="progress-wrap">
+                    <div class="progress-fill" id="progressFill"
+                        style="width: 10%">
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube Video -->
+            <div class="video-box">
+                <div id="videoContainer">
+                    <!-- Video loads here -->
+                    <div class="spinner-container">
+                        <div class="spinner"></div>
+                        <p>Loading video...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Step -->
+            <div class="step-box">
+                <div class="step-number" id="stepNumber">STEP 1</div>
+                <div class="step-text"  id="stepText">Loading...</div>
+            </div>
+
+
+            <!-- Step Navigation -->
+            <div class="step-nav">
+                <button class="btn btn-secondary"
+                    onclick="prevStep()">
+                    ← Previous
+                </button>
+                <button class="btn btn-primary"
+                    onclick="nextStep()">
+                    Next Step →
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- Completion View — shows after last step -->
+        <div id="completionView" style="display:none;">
+
+            <div class="completion-box">
+
+                <div class="big-emoji">🎉</div>
+                <h2 id="completionTitle">You Did It!</h2>
+                <p id="completionSubtitle">
+                    Your dish is ready. Enjoy your meal!
+                </p>
+
+                <!-- Achievement -->
+                <div class="achievement-popup" id="achievementPopup"
+                    style="display:none;">
+                </div>
+
+                <!-- Budget Entry -->
+                <div class="budget-entry">
+                    <h3>💰 How much did you spend?</h3>
+                    <p>Enter grocery cost for this dish</p>
+                    <div class="budget-input-row">
+                        <span>₹</span>
+                        <input
+                            type="number"
+                            id="spentInput"
+                            placeholder="e.g. 150"
+                            min="0"
+                        />
+                        <button class="btn btn-success"
+                            onclick="saveBudgetEntry()">
+                            Save
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Next Actions -->
+                <div class="completion-actions">
+                    <button class="btn btn-primary"
+                        onclick="window.location.href='index.html'">
+                        🏠 Back to Home
+                    </button>
+                    <button class="btn btn-secondary"
+                        onclick="window.location.href='profile.html'">
+                        👤 View Profile
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        🍳 CookSmart — Made for Students
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cooking-mode.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login — CookSmart</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">🍳</div>
+                <h1>CookSmart</h1>
+                <p>Sign in to your account</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter your password"
+                        required
+                    />
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="rememberMe" name="rememberMe" />
+                    <label for="rememberMe">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn-login">Sign In</button>
+
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+
+            <div class="login-footer">
+                <p>Don't have an account? <a href="#" onclick="toggleSignup()">Create one</a></p>
+            </div>
+        </div>
+
+        <!-- Signup Card (Hidden by default) -->
+        <div class="signup-card" id="signupCard" style="display: none;">
+            <div class="login-header">
+                <div class="login-logo">🍳</div>
+                <h1>CookSmart</h1>
+                <p>Create your account</p>
+            </div>
+
+            <form id="signupForm" class="login-form">
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="signupEmail" 
+                        name="signupEmail" 
+                        placeholder="Enter your email"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input 
+                        type="password" 
+                        id="signupPassword" 
+                        name="signupPassword" 
+                        placeholder="Create a password (min 6 chars)"
+                        required
+                        minlength="6"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        placeholder="Confirm your password"
+                        required
+                    />
+                </div>
+
+                <button type="submit" class="btn-login">Create Account</button>
+
+                <div id="signupErrorMessage" class="error-message"></div>
+            </form>
+
+            <div class="login-footer">
+                <p>Already have an account? <a href="#" onclick="toggleSignup()">Sign in</a></p>
+            </div>
+        </div>
+
+        <button id="darkModeBtn" class="dark-mode-btn" onclick="toggleDarkMode()">🌙</button>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

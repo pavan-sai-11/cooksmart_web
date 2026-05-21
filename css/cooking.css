@@ -1,0 +1,219 @@
+/* CookSmart - Cooking Mode Styles */
+
+/* Progress */
+.cooking-progress {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+}
+
+.step-counter {
+    font-size: 13px;
+    color: var(--text-sub);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Video */
+.video-box {
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+}
+
+.video-box iframe {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+/* Step Box */
+.step-box {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 28px;
+    border: 1px solid var(--border);
+    margin-bottom: 20px;
+    min-height: 140px;
+}
+
+.step-number {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.step-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+/* Timer */
+.timer-box {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--border);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--primary);
+    font-variant-numeric: tabular-nums;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
+
+.timer-display.running { color: var(--success); }
+.timer-display.done    { color: var(--danger);  }
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+/* Step Navigation */
+.step-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.step-nav .btn { flex: 1; justify-content: center; }
+
+
+/* Completion */
+.completion-box {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.big-emoji {
+    font-size: 72px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.completion-box h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.completion-box p {
+    font-size: 15px;
+    color: var(--text-sub);
+    margin-bottom: 24px;
+}
+
+/* Achievement Popup */
+.achievement-popup {
+    background: rgba(255,107,53,0.1);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 0 auto 24px auto;
+    max-width: 380px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Budget Entry */
+.budget-entry {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--border);
+    margin: 0 auto 24px auto;
+    max-width: 400px;
+}
+
+.budget-entry h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.budget-entry p {
+    font-size: 13px;
+    color: var(--text-sub);
+    margin-bottom: 14px;
+}
+
+.budget-input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.budget-input-row span {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.budget-input-row input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 15px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.budget-input-row input:focus {
+    border-color: var(--primary);
+}
+
+/* Completion Actions */
+.completion-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-box iframe { height: 220px; }
+    .timer-display    { font-size: 40px; }
+    .step-nav         { flex-direction: column; }
+    .completion-actions { flex-direction: column; }
+}
+
+/* Video Label */
+.video-label {
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-sub);
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Video Placeholder */
+.video-placeholder {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-sub);
+    font-size: 14px;
+    background: var(--bg-card);
+}
